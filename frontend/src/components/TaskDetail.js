@@ -137,5 +137,4 @@ const TaskDetail = ({ user }) => {
     </div>
   );
 };
-
 export default TaskDetail;
