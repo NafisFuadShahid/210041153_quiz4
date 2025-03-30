@@ -66,7 +66,7 @@ A full-stack web application that allows users to securely manage tasks.
 ### Frontend Setup
 1. **Navigate to the frontend folder:**
    ```bash
-   cd ../frontend
+   cd frontend
 2. **Install dependencies:**
    ```bash
    npm install
