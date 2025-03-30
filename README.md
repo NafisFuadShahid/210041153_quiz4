@@ -59,7 +59,7 @@ A full-stack web application that allows users to securely manage tasks.
 4. **Start the backend server:**
    ```bash
    npm run dev
--(If you don't have a "dev" script, run: node server.js)
+- (If you don't have a "dev" script, run: node server.js)
 
 ---
 
@@ -71,7 +71,6 @@ A full-stack web application that allows users to securely manage tasks.
    ```bash
    npm install
 3. **Start the frontend development server:**
-  ```bash
+   ```bash
    npm start
--The React application will open at http://localhost:3000
-   
+- The React application will open at http://localhost:3000
