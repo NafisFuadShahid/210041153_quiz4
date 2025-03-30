@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setUser }) => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail]       = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
@@ -16,28 +16,44 @@ const Login = ({ setUser }) => {
       setUser(res.data.user);
       navigate('/');
     } catch (err) {
-      alert(err.response.data.message || 'Login failed');
+      alert(err.response?.data?.message || 'Login failed');
     }
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input 
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required />
-        <input 
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required />
-        <button type="submit">Login</button>
-      </form>
+    <div className="row justify-content-center mt-5">
+      <div className="col-md-6">
+        <div className="card shadow-sm">
+          <div className="card-body">
+            <h3 className="card-title text-center mb-3">Login</h3>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label htmlFor="loginEmail" className="form-label">Email</label>
+                <input
+                  type="email"
+                  id="loginEmail"
+                  className="form-control"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="loginPassword" className="form-label">Password</label>
+                <input
+                  type="password"
+                  id="loginPassword"
+                  className="form-control"
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required />
+              </div>
+              <button type="submit" className="btn btn-primary w-100">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 // src/App.js
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
 import Login from './components/Login';
 import Register from './components/Register';
 import TaskList from './components/TaskList';
@@ -16,21 +17,8 @@ function App() {
 
   return (
     <Router>
-      <div>
-        <nav>
-          <Link to="/">Tasks</Link> {" | "}
-          {user ? (
-            <>
-              <span>Welcome, {user.name}</span> {" | "}
-              <button onClick={handleLogout}>Logout</button>
-            </>
-          ) : (
-            <>
-              <Link to="/login">Login</Link> {" | "}
-              <Link to="/register">Register</Link>
-            </>
-          )}
-        </nav>
+      <NavBar user={user} onLogout={handleLogout} />
+      <div className="container mt-5 pt-3">
         <Routes>
           <Route path="/" element={<TaskList user={user} />} />
           <Route path="/task/:id" element={<TaskDetail user={user} />} />
